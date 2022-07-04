@@ -6,9 +6,10 @@ namespace Hwork6
 {
     class Program
     {
+        public static string coWorkers = @"D:\\Сотрудники.txt";
         static void Recording(string[] questions)
         {
-            using (StreamWriter sw = new StreamWriter(@"D:\\Сотрудники.txt", true, Encoding.Unicode))
+            using (StreamWriter sw = new StreamWriter(coWorkers, true, Encoding.Unicode))
             {
                 int a = 1;
                 char key = 'д';
@@ -44,7 +45,7 @@ namespace Hwork6
         }
         static void Reading(string[] questions)
         {
-            using (StreamReader sr = new StreamReader(@"D:\\Сотрудники.txt", Encoding.Unicode))
+            using (StreamReader sr = new StreamReader(coWorkers, Encoding.Unicode))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -66,7 +67,6 @@ namespace Hwork6
         }
         static void Main()
         {
-            string coWorkers= @"D:\\Сотрудники.txt";
             if (File.Exists(coWorkers) == false)
             {
                 File.Create(coWorkers).Close();
